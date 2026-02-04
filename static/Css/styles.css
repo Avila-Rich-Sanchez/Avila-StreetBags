@@ -1,0 +1,220 @@
+*, *::after, *::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body, html{
+    width: 100%;
+    min-height: 100vh;
+    background-color: white;
+}
+
+
+main{
+    width: 100%;
+    /* box-shadow: #523120 0 3px 9px; */
+    /* border-bottom: 1px solid #523120; */
+}
+
+.menu-navegacion-main{
+    width: 100%;
+    text-align: center;
+    padding: 1vh 0;
+}
+
+.menu-navegacion-main ul{
+    display: flex;
+    list-style: none;
+    justify-content: center;
+}
+
+.menu-navegacion-main ul li{
+    margin: 0 20px;
+    position: relative;
+}
+
+
+.menu-navegacion-main ul li a{
+    text-decoration: none;
+    font-family: 'Montserrat',Arial, Helvetica, sans-serif;
+    color:#523120;
+    padding-bottom: 1px;
+}
+
+.menu-navegacion-main ul li a:hover{
+    color: #c37c55;
+}
+
+.menu-navegacion-main ul li a:focus{
+    border-bottom: #936a56 2px solid;
+}
+
+#destacado-menu-navegacion{
+    font-weight: 600;
+}
+
+
+.container-principal{
+    width: 100%;
+    margin-top: 20px;
+    border-bottom: #523120 1px solid;
+}
+
+h2{
+    font-family: 'Montserrat',Arial, Helvetica, sans-serif;
+    font: bold;
+    padding: 10px 20px;
+    color: #7b4930;
+}
+
+.lista-productos{
+    display: flex;
+    overflow-x:auto;
+    white-space: nowrap;
+    text-align: center;
+    justify-content: space-around;
+    overflow-x: scroll;
+    scroll-behavior: smooth; /* Para que el movimiento se vea fluido */
+    padding: 0 20px;
+    position: relative;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+.lista-productos::-webkit-scrollbar{
+    display: none;
+}
+
+.tarjeta-producto{
+    width: 30vw;
+    padding: 20px 10px;
+    flex-shrink: 0;
+    display: inline-block;
+    color: #523120;
+    position: relative;
+}
+
+.imagen-producto{
+    position: relative;
+    overflow: hidden;
+}
+
+.ver-detalles-overlay{
+    position: absolute;
+    bottom: 3px;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    background-color: rgba(255, 255, 255,0.8);
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    display: grid;
+    align-items: center;
+    padding: 3px 0;
+}
+
+.tarjeta-producto:hover .ver-detalles-overlay{
+    opacity: 1;
+}
+
+.detalles-boton{
+    font-family: "Montserrat";
+    text-decoration: none;
+    background-color: transparent; /* Botón blanco */
+    color: #523120; /* Color de tu marca (marrón) */
+    border-radius: 4px; /* Bordes suaves, si deseas */
+    font-size: 0.9rem;
+}
+
+.detalles-boton:hover{
+    text-shadow: 0 0 9px black;
+}
+
+.añadir-carrito{
+    background-color: transparent;
+    color: #523120;
+    font-weight: bold;
+}
+
+.tarjeta-producto p{
+    font-family: monospace;
+    font-size: 1rem;
+}
+
+.tarjeta-producto h3{
+    font-family: 'Montserrat',Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    padding-bottom: 3px;
+}
+
+.tarjeta-producto img{
+    max-width: 100%;
+}
+
+.boton-scroll {
+    position:static;
+    top: 50%;
+    /* transform: translateY(0%); */
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10;
+}
+
+.boton-scroll.izq{
+    left: 0;
+}
+
+.boton-scroll.der{
+    right: 0;
+}
+
+.ver-mas-link{
+    margin: auto 20px;
+    text-decoration: none;
+    font-family: "Montserrat", Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    color: #523120;
+    font-weight: 600;
+    height: 20%;
+}
+
+.ver-mas-link:hover{
+    cursor: pointer;
+    color: #cebfb6;
+}
+
+.container-principal section{
+    margin: 30px 0;
+}
+
+/* Contenedor del avatar para que mantenga el tamaño de los iconos */
+.user-avatar-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.user-avatar-circle {
+    width: 32px;
+    height: 32px;
+    background-color: #a1603d;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+    /* transition: shadow 0.2s ease; */
+}
+
+.user-avatar-circle:hover {
+    background-color: #8a5234;
+}
+

@@ -1,0 +1,5 @@
+MAX_USER_LENGTH = 25
+MIN_USER_LENGTH = 3
+MAX_EMAIL_LENGTH = 80
+MIN_PASSWORD_LENGTH = 8
+SECRET_KEY = b'\xdc~\xf7\x1c\x85\x9d\xb1\x95\xe4-\x1e)\x1d\x98\xe5"\xd8m\xe1XX\xb3\xa8\xdb'

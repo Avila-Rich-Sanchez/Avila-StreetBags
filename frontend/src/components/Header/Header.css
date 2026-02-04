@@ -1,0 +1,108 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 3rem;
+    border-bottom: 1px solid #6f503f;
+    /* box-shadow: #6f503f 0 2px 9px; */
+    user-select: none;
+}
+
+.header-acciones{
+    display: flex;
+    gap: 20px;
+    width: 50%;
+    justify-content: right;
+}
+
+h1{
+    text-align: center;
+}
+
+h1 a{
+    text-decoration: none;
+    font-family: 'Cinzel', Arial, Helvetica, sans-serif;
+    color: #523120;
+    text-shadow: #6f503f 0 0 9px;
+    font-weight: 500;
+}
+
+.span-titulo-principal{
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    color: #523120;
+    font-weight: 300;
+    display: block;
+}
+
+.form-busqueda-principal{
+    width: 40%;
+    position: relative;
+}
+
+.form-busqueda-principal input{
+    width: 100%;
+    height: 2rem;
+    padding: 0 1rem;
+    border: 1px solid #cebfb6;
+    border-radius: 5px;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+}
+
+.form-busqueda-principal input::placeholder{
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+}
+
+.boton-buscar-form-principal{
+    width: 15%;
+    height: 2rem;
+    position: absolute;
+    top: 0;
+    right: 1px;
+    border: none;
+    background-color: transparent;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-size: 0.8rem;
+    border-radius: 0 4px 4px 0;
+    border-left: 1px solid #cebfb6;
+}
+
+.form-busqueda-principal input:focus ~ .boton-buscar-form-principal{
+    height: 1.9rem;
+    top: 1.2px;
+}
+
+.form-busqueda-principal input:focus{
+    outline: none;
+    box-shadow: 0 0 9px #523120;
+}
+
+.boton-buscar-form-principal:hover{
+    cursor: pointer;
+    background-color: #cebfb6;
+}
+
+.menu-navegacion ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+}
+
+.link-menu a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #523120;
+    font-size: 1.2rem;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    transition: transform 0.2s ease;
+}
+
+.link-menu a:hover{
+    color: #c37c55;
+    transform: scale(1.1);
+}

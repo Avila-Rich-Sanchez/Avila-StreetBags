@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Css/registro-login.css')}}">
+    <script src="{{ url_for('static', filename='Js/funciones-login.js')}}" defer></script>
+    <link rel="icon" href="{{ url_for('static', filename='Resources/favicon.ico') }}" type="image/x-icon">
+    <title>Login</title>
+</head>
+<body>
+    <div class="container-inicio-sesion">
+            <h2>INICIA SESION</h2>
+            {% if error %}
+                <p style="color: #a1603d; font-size: 0.8em; font-weight: bold; margin-bottom: 10px;">
+                    {{ error }}
+                </p>
+            {% endif %}
+            <form action="{{ url_for('login')}}" method="post">
+                <label for="email">E-mail</label><br>
+                <input type="email" class="input-form" id="email" name="email" value="{{email_previo}}"><br>
+                <label for="clave">Contraseña</label><br>
+                <input type="password" class="input-form" id="clave" name="clave" minlength="8"><br>
+                <button type="submit" class="btn-input">INICIAR SESION</button>
+                <p><a href="#">Se te olvido la contraseña?</a></p>
+            </form>
+        </div>
+</body>
+</html>

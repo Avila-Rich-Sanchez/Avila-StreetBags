@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/perfil.css') }}">
+    <script src="{{ url_for('static', filename='js/funciones-index.js')}}"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="icon" href="{{ url_for('static', filename='Resources/favicon.ico') }}" type="image/x-icon">
+    <title>Mi-Perfil</title>
+</head>
+<body>
+    <nav class="nav-lateral-perfil">
+        <header class="encabezado-perfil">
+            <div class="user-avatar-circle">
+                {{ session['user_name'][0] | upper }}
+            </div>
+            <p>{{ session['user_name'] }}</p>
+        </header>
+        <div class="links-menu-lateral">
+            <ul>
+                <li><a href="#">Resumen</a></li>
+                <li><a href="#">Mis Pedidos</a></li>
+                <li><a href="#">Datos Personales</a></li>
+                <li><a href="#">Libreta de Direcciones</a></li> 
+                <li><a href="#">Metodos de Pago</a></li>
+                <li><a href="#">Lista de Deseos</a></li>
+                <li><a href="#">Puntos</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <div id="resumen">
+            <header class="bienvenida">
+                <h1>Resumen de Perfil</h1>
+                <p>Bienvenido de nuevo, <span id="saludo-nombre-usuario">{{ session['user-name'] }}</span>.</p>
+            </header>
+
+            <div class="dashboard-grid">
+                <div class="tarjeta-stats">
+                    <span class="titulo-stats">Puntos Acumulados</span>
+                    <span class="valor-stats">1,250</span>
+                </div>
+                <div class="tarjeta-stats">
+                    <span class="titulo-stats">Pedidos Realizados</span>
+                    <span class="valor-stats">08</span>
+                </div>
+                <div class="tarjeta-stats">
+                    <span class="titulo-stats">Lista de Deseos</span>
+                    <span class="valor-stats">12</span>
+                </div>
+            </div>
+
+            <div class="seccion-info">
+                <h3>Información de Cuenta</h3>
+                <p><strong>Correo:</strong> ricardo@ejemplo.com</p>
+                <p><strong>Miembro desde:</strong> Enero 2024</p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
