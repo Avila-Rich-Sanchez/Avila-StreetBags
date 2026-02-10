@@ -1,5 +1,212 @@
-footer{
+/* Footer.css */
+
+/* Contenedor principal del footer */
+.footer-container {
+    background: #eaeaea;
+    color: #ffffff;
+    position: relative;
+    min-height: 300px;
     width: 100%;
-    min-height: 50px;
-    background-color: #9a7e6e;
+    font-family: "Montserrat", Arial, Helvetica, sans-serif;
+}
+
+/* Contenido principal - ocupará el espacio disponible */
+.footer-main-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 40px 20px 80px; /* 80px abajo para la banda fija */
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 20px;
+}
+
+.logo{
+    font-size: 2rem;
+    text-decoration: none;
+    font-family: 'Cinzel', Arial, Helvetica, sans-serif;
+    color: #523120;
+    text-shadow: #6f503f 0 0 9px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.span-titulo-principal{
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    color: #523120;
+    font-weight: 300;
+    display: block;
+}
+
+.contact-info {
+    margin-bottom: 25px;
+    line-height: 1.8;
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    color: #523120;
+}
+
+.contact-info i {
+    margin-right: 12px;
+    width: 20px;
+    text-align: center;
+}
+
+.social-media {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-media a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: #333333;
+    border-radius: 50%;
+    color: #523120;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-media a:hover {
+    background: #ffffff;
+    transform: translateY(-3px);
+}
+
+.footer-section h3 {
+    color: #523120;
+    font-size: 18px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #523120;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 12px;
+}
+
+.footer-section ul li a {
+    color: #523120;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #b5714f;
+    padding-left: 5px;
+}
+
+/* BANDA FIJA EN LA PARTE INFERIOR */
+.banda-final-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #835843;
+    padding: 15px 0;
+    border-top: 1px solid #333;
+    z-index: 10;
+}
+
+.banda-final-footer .pais-empresa {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: bold;
+    font-size: 18px;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.opciones-legales {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 80px; /* Espacio para el país a la izquierda */
+}
+
+.opciones-legales ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 20px;
+}
+
+.opciones-legales ul li {
+    display: inline-block;
+}
+
+.opciones-legales ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.opciones-legales ul li a:hover {
+    color: #c2c2c2;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .footer-main-content {
+        flex-direction: column;
+        padding: 30px 20px 100px; /* Más espacio para la banda en móvil */
+    }
+    
+    .banda-final-footer {
+        padding: 15px;
+    }
+    
+    .banda-final-footer .pais-empresa {
+        position: static;
+        text-align: center;
+        margin-bottom: 10px;
+        transform: none;
+    }
+    
+    .opciones-legales {
+        padding: 0;
+    }
+    
+    .opciones-legales ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-main-content {
+        padding: 20px 15px 120px;
+    }
+    
+    .opciones-legales ul li a {
+        font-size: 12px;
+    }
+    
+    .logo {
+        font-size: 24px;
+    }
 }

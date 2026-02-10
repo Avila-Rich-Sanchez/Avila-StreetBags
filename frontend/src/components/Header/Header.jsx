@@ -7,12 +7,12 @@ function Header() {
     return (
     <header>
         <h1>
-        <a href="#">Avila <span className="span-titulo-principal">Streetbags</span></a>
+        <a href="http://localhost:5173/">Avila <span className="span-titulo-principal">Streetbags</span></a>
         </h1>
         <div className="header-acciones">
         <form action="" className="form-busqueda-principal">
-            <input type="text" placeholder="" />
-            <button onClick={() => {}} className="boton-buscar-form-principal">
+            <input type="text" placeholder="Bolso Oxford"/>
+            <button className="boton-buscar-form-principal">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#523120" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="9" cy="12" r="6"></circle>
                 <line x1="21" y1="21" x2="15" y2="16"></line>
