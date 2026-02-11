@@ -4,9 +4,9 @@ import './main.css'
 function Main(){
 
     const productos = [
-        { id: 1, nombre: "Bolso Oxford 1", imagen: "../../../public/bolso-negro.jpg" },
-        { id: 2, nombre: "Bolso Oxford 2", imagen: "../../../public/Bolso-azul.jpg" },
-        { id: 3, nombre: "Bolso Oxford 3", imagen: "../../../public/Imagen-producto.png" },
+        { id: 1, nombre: "Bolso Oxford 1", imagen: "../../../public/bolso-negro.jpg", precio:"20$" },
+        { id: 2, nombre: "Bolso Oxford 2", imagen: "../../../public/Bolso-azul.jpg", precio:"20$"},
+        { id: 3, nombre: "Bolso Oxford 3", imagen: "../../../public/Imagen-producto.png", precio:"20$" },
     ];
 
     return (

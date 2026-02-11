@@ -1,13 +1,19 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Header.css'; 
 
 function Header() {
-    const userName = "C";
+    const userName = "R";
+    const navigate = useNavigate();
+
+    const irAlPerfil = () => {
+        navigate('/perfil');
+    };
 
     return (
     <header>
         <h1>
-        <a href="http://localhost:5173/">Avila <span className="span-titulo-principal">Streetbags</span></a>
+        <a onClick={() => navigate('/')}>Avila <span className="span-titulo-principal">Streetbags</span></a>
         </h1>
         <div className="header-acciones">
         <form action="" className="form-busqueda-principal">
@@ -43,7 +49,7 @@ function Header() {
                 <div className="contenedor-usuario">
                 {userName ? (
                   // Si hay userName (logueado):
-                    <a href="/perfil" className="user-avatar-link" draggable="false">
+                    <a onClick={irAlPerfil} className="user-avatar-link" draggable="false">
                     <div className="user-avatar-circle">
                         {userName[0].toUpperCase()}
                     </div>

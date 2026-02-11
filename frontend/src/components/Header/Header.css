@@ -6,6 +6,7 @@ header{
     border-bottom: 1px solid #6f503f;
     /* box-shadow: #6f503f 0 2px 9px; */
     user-select: none;
+    box-shadow: 0.5px 0.5px 9px #6f503f;
 }
 
 .header-acciones{
@@ -25,6 +26,10 @@ h1 a{
     color: #523120;
     text-shadow: #6f503f 0 0 9px;
     font-weight: 500;
+}
+
+h1 a:hover{
+    cursor: pointer;
 }
 
 .span-titulo-principal{
@@ -105,4 +110,5 @@ h1 a{
 .link-menu a:hover{
     color: #c37c55;
     transform: scale(1.1);
+    cursor: pointer;
 }

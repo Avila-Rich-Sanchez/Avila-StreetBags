@@ -4,14 +4,13 @@ import './Footer.css';
 function Footer() {
     return (
         <footer className="footer-container">
-            {/* Contenido principal del footer */}
             <div className="footer-main-content">
                 <div className="footer-section">
-                    <h2 className="logo">Avila<span className="span-titulo-principal">Streetbags</span></h2>
+                    <h2 className="logo"><span className="titulo-empresa">Avila</span><span className="span-titulo-principal">Streetbags</span></h2>
                     <div className="contact-info">
-                        <p><i className="fas fa-map-marker-alt"></i> Av. Principal 123, Ciudad</p>
-                        <p><i className="fas fa-phone"></i> +1 234 567 8900</p>
-                        <p><i className="fas fa-envelope"></i> info@avilastreetbags.com</p>
+                        <p>Av. Principal 123, Ciudad</p>
+                        <p>+1 234 567 8900</p>
+                        <p>info@avilastreetbags.com</p>
                     </div>
                     <div className="social-media">
                         <a href="#"><i className="fab fa-facebook-f"></i></a>
@@ -20,8 +19,7 @@ function Footer() {
                         <a href="#"><i className="fab fa-pinterest-p"></i></a>
                     </div>
                 </div>
-                
-                {/* Añade más secciones si necesitas */}
+
                 <div className="footer-section">
                     <h3>Productos</h3>
                     <ul>
@@ -52,9 +50,8 @@ function Footer() {
                 </div>
             </div>
 
-            {/* BANDA FIJA EN LA PARTE INFERIOR */}
             <div className="banda-final-footer">
-                <div className="pais-empresa">VEN</div>
+                <div className="copyright-empresa"><span id="copyright">© 2025 Avila-Streetbags</span> Todos los derechos reservados</div>
                 <div className="opciones-legales">
                     <ul>
                         <li><a href="#">Configuración de cookies</a></li>

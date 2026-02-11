@@ -8,6 +8,8 @@
     min-height: 300px;
     width: 100%;
     font-family: "Montserrat", Arial, Helvetica, sans-serif;
+    border-top: 1px solid #6f503f;
+    box-shadow: -1px -1px 9px #6f503f;
 }
 
 /* Contenido principal - ocupará el espacio disponible */
@@ -35,6 +37,11 @@
     text-shadow: #6f503f 0 0 9px;
     font-weight: 500;
     margin-bottom: 20px;
+    padding: 12px 0;
+}
+
+.titulo-empresa{
+    padding: 42px;
 }
 
 .span-titulo-principal{
@@ -56,12 +63,6 @@
     color: #523120;
 }
 
-.contact-info i {
-    margin-right: 12px;
-    width: 20px;
-    text-align: center;
-}
-
 .social-media {
     display: flex;
     gap: 15px;
@@ -74,7 +75,7 @@
     justify-content: center;
     width: 40px;
     height: 40px;
-    background: #333333;
+    background: #523120;
     border-radius: 50%;
     color: #523120;
     text-decoration: none;
@@ -82,7 +83,7 @@
 }
 
 .social-media a:hover {
-    background: #ffffff;
+    background: #b5714f;
     transform: translateY(-3px);
 }
 
@@ -121,32 +122,28 @@
     left: 0;
     width: 100%;
     background: #835843;
-    padding: 15px 0;
+    padding: 15px 30px;
     border-top: 1px solid #333;
     z-index: 10;
 }
 
-.banda-final-footer .pais-empresa {
+.banda-final-footer .copyright-empresa {
     position: absolute;
     left: 20px;
     top: 50%;
     transform: translateY(-50%);
-    font-weight: bold;
-    font-size: 18px;
+    font-size: 12px;
     color: #ffffff;
-    text-transform: uppercase;
 }
 
-.opciones-legales {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 80px; /* Espacio para el país a la izquierda */
+#copyright{
+    font-weight: bold;
 }
 
 .opciones-legales ul {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: end;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -160,12 +157,13 @@
 .opciones-legales ul li a {
     color: #ffffff;
     text-decoration: none;
-    font-size: 14px;
-    transition: color 0.3s ease;
+    font-size: 12px;
+    transition: all 0.3s ease;
 }
 
 .opciones-legales ul li a:hover {
     color: #c2c2c2;
+    text-shadow: #000000 0 0 2px ;
 }
 
 /* RESPONSIVE DESIGN */

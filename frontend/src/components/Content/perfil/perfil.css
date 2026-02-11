@@ -1,7 +1,8 @@
 .nav-lateral-perfil{
-    box-shadow: 0 0 9px #a1603d ;
     min-height: 100vh;
     width: 20%;
+    border-right: 1px solid #6f503f;
+    box-shadow: 1px 2px 9px #6f503f;
 }
 
 .encabezado-perfil{
@@ -16,10 +17,10 @@
     margin-bottom: 20px;
     border-bottom: 1px solid #8a5234;
     width: 100%;
-    /* box-shadow: 0px 3px 9px #a1603d; */
+    box-shadow: none;
 }
 
-.user-avatar-circle {
+.user-avatar-circle-nav {
     width: 120px;
     height: 120px;
     background-color: #a1603d;
@@ -34,7 +35,7 @@
     /* transition: shadow 0.2s ease; */
 }
 
-.user-avatar-circle:hover {
+.user-avatar-circle-nav:hover {
     background-color: #8a5234;
 }
 
@@ -50,52 +51,16 @@
 .links-menu-lateral ul li{
     list-style: none;
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
-    /* font */
 }
 
 .links-menu-lateral ul li a{
     text-decoration: none;
     color: #000000;
+    transition: all 0.2s ease-in;
 }
 
-#resumen {
-    padding: 40px;
-    flex-grow: 1; /* Esto hace que ocupe todo el espacio derecho */
-    background-color: transparent;
-    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
-}
-
-#saludo-nombre-usuario{
+.links-menu-lateral ul li a:hover{
     color: #8a5234;
-    font-style: oblique;
+    padding-left: 5px;
 }
 
-.dashboard-grid {
-    display: grid;
-    gap: 30px;
-    margin-top: 30px;
-}
-
-.tarjeta-stats {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    border-left: 5px solid #a1603d; /* Un detalle elegante */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-}
-
-.titulo-stats {
-    display: block;
-    color: #666;
-    font-size: 0.9rem;
-}
-
-.valor-stats {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #a1603d;
-}
-
-.seccion-info{
-    margin-top: 30px;
-}

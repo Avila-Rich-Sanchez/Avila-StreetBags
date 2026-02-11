@@ -1,34 +1,13 @@
 import React from "react";
+import "./resumen.css";
 
-function Perfil() {
-    // En el futuro, este nombre vendrá de tu base de datos (Python)
-    const userName = 'Ricardo'; 
+function Resumen(){
 
-    return (
-        // Envolvemos todo en un div para que React no de error
-        <div className="perfil-container" style={{ display: 'flex' }}> 
-            <nav className="nav-lateral-perfil">
-                <header className="encabezado-perfil">
-                    <div className="user-avatar-circle">
-                        {userName[0].toUpperCase()}
-                    </div>
-                    {/* Usamos la variable de JS directamente */}
-                    <p>{userName}</p>
-                </header>
-                <div className="links-menu-lateral">
-                    <ul>
-                        <li><a href="#">Resumen</a></li>
-                        <li><a href="#">Mis Pedidos</a></li>
-                        <li><a href="#">Datos Personales</a></li>
-                        <li><a href="#">Libreta de Direcciones</a></li> 
-                        <li><a href="#">Metodos de Pago</a></li>
-                        <li><a href="#">Lista de Deseos</a></li>
-                        <li><a href="#">Puntos</a></li>
-                    </ul>
-                </div>
-            </nav>
+    const userName = "Ricardo";
 
-            <main className="contenido-perfil">
+    return(
+
+        <main className="contenido-perfil">
                 <div id="resumen">
                     <header className="bienvenida">
                         <h1>Resumen de Perfil</h1>
@@ -56,9 +35,8 @@ function Perfil() {
                         <p><strong>Miembro desde:</strong> Enero 2024</p>
                     </div>
                 </div>
-            </main>
-        </div>
+        </main>
     );
 }
 
-export default Perfil;
+export default Resumen
