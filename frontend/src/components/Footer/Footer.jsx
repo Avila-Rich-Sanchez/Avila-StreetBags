@@ -1,22 +1,27 @@
 import React from "react";
 import './Footer.css';
+import { FaFacebookF, FaInstagram, FaTwitter, FaPinterestP } from 'react-icons/fa';
+import { useNavigate } from "react-router-dom";
 
 function Footer() {
+    
+    const navigate = useNavigate();
+
     return (
         <footer className="footer-container">
             <div className="footer-main-content">
                 <div className="footer-section">
-                    <h2 className="logo"><span className="titulo-empresa">Avila</span><span className="span-titulo-principal">Streetbags</span></h2>
+                    <h2 className="logo"><a onClick={() => navigate('/')}><span className="titulo-empresa">Avila</span><span className="span-titulo-principal">Streetbags</span></a></h2>
                     <div className="contact-info">
                         <p>Av. Principal 123, Ciudad</p>
                         <p>+1 234 567 8900</p>
                         <p>info@avilastreetbags.com</p>
                     </div>
                     <div className="social-media">
-                        <a href="#"><i className="fab fa-facebook-f"></i></a>
-                        <a href="#"><i className="fab fa-instagram"></i></a>
-                        <a href="#"><i className="fab fa-twitter"></i></a>
-                        <a href="#"><i className="fab fa-pinterest-p"></i></a>
+                        <a href="https://www.facebook.com/mario.avilamendoza.39" target="_blank"><FaFacebookF /></a>
+                        <a href="https://www.instagram.com/avila_streetbags/" target="_blank"><FaInstagram /></a>
+                        <a href="#"><FaTwitter/></a>
+                        <a href="#"><FaPinterestP/></a>
                     </div>
                 </div>
 

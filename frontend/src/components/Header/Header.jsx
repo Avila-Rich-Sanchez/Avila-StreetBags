@@ -1,13 +1,23 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, NavLink } from 'react-router-dom';
 import './Header.css'; 
+import { useState } from 'react';
 
 function Header() {
-    const userName = "R";
+    const [modalAbierto, setModalAbierto] = useState(false);  // ← AÑADE ESTO
+    const userName = "";
     const navigate = useNavigate();
 
     const irAlPerfil = () => {
         navigate('/perfil');
+    };
+
+    const abrirModal = () => {
+        setModalAbierto(true);
+    };
+
+    const cerrarModal = () => {
+        setModalAbierto(false);  // ← CIERRA el modal
     };
 
     return (
@@ -56,7 +66,7 @@ function Header() {
                     </a>
                 ) : (
                   // Si NO hay userName (no logueado):
-                    <a href="/registro" draggable="false">
+                    <a onClick={abrirModal} draggable="false">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
                         <circle cx="12" cy="7" r="4"></circle>
@@ -68,6 +78,62 @@ function Header() {
             </ul>
         </nav>
         </div>
+
+        {modalAbierto && (
+                <div className="modal-overlay" onClick={cerrarModal}>
+                    <div className="modal-container" onClick={(e) => e.stopPropagation()}>
+                        <button className="modal-close" onClick={cerrarModal}>×</button>
+                        
+                        <h2>REGISTRATE</h2>
+                        
+                        <form onSubmit={(e) => e.preventDefault()}>
+                            <label htmlFor="nombre-usuario">Nombre de usuario</label><br/>
+                            <input 
+                                type="text" 
+                                className="input-form" 
+                                id="nombre-usuario" 
+                                name="nombre_usuario"
+                            /><br/>
+                            
+                            <label htmlFor="email">E-mail</label><br/>
+                            <input 
+                                type="email" 
+                                className="input-form" 
+                                id="email" 
+                                name="email"
+                            /><br/>
+                            
+                            <label htmlFor="clave">Contraseña</label><br/>
+                            <input 
+                                type="password" 
+                                className="input-form" 
+                                id="clave" 
+                                name="clave"
+                            /><br/>
+                            
+                            <label className="label-checkbox">
+                                <input 
+                                    type="checkbox" 
+                                    className="input-checkbox" 
+                                /> Acepto términos y condiciones
+                            </label>
+                            
+                            {/* Botón que SOLO cierra el modal (sin conexión) */}
+                            <button type="button" className="btn-input" onClick={cerrarModal}>
+                                REGISTRARME
+                            </button>
+                            
+                            <p>
+                                <a href="#" onClick={(e) => {
+                                    e.preventDefault();
+                                    cerrarModal();
+                                    // navigate('/login');
+                                }}>Ya tengo una cuenta</a>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            )}
     </header>
 );
 }

@@ -9,7 +9,7 @@
     width: 100%;
     font-family: "Montserrat", Arial, Helvetica, sans-serif;
     border-top: 1px solid #6f503f;
-    box-shadow: -1px -1px 9px #6f503f;
+    /* box-shadow: -1px -1px 9px #6f503f; */
 }
 
 /* Contenido principal - ocupará el espacio disponible */
@@ -38,6 +38,10 @@
     font-weight: 500;
     margin-bottom: 20px;
     padding: 12px 0;
+}
+
+.logo a{
+    cursor: pointer;
 }
 
 .titulo-empresa{
@@ -77,14 +81,15 @@
     height: 40px;
     background: #523120;
     border-radius: 50%;
-    color: #523120;
+    color: #ffffff;
     text-decoration: none;
     transition: all 0.3s ease;
 }
 
 .social-media a:hover {
-    background: #b5714f;
+    background: #ffffff;
     transform: translateY(-3px);
+    color: #523120;
 }
 
 .footer-section h3 {

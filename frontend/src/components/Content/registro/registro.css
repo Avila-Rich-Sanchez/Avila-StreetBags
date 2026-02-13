@@ -1,26 +1,17 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-body{
-    width: 100vw;
-    height: 100vh;
+.main-registro{
+    height: 80vh;
     display: grid;
     place-items: center;
-    background: #cebfb6;
 }
 
 .container-registro, 
 .container-inicio-sesion{
-    background: white;
+    background: transparent;
     width: 90%;
     max-width: 400px;
     height: auto;
-    border-radius: 10px;
-    box-shadow: 0 0 9px #cca994;
     padding: 30px;
+    margin: auto;
 }
 
 .container-registro form,
@@ -98,7 +89,7 @@ body{
 
 .input-checkbox:hover{
     cursor: pointer;
-    box-shadow: 0 0 11px #776a62;
+    /* box-shadow: 0 0 11px #776a62; */
 }
 
 .btn-input{
@@ -107,13 +98,14 @@ body{
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     border-radius: 0;
     margin: 10px 0 10px 0;
-    border: none;
-    background-color: #776a62;
+    border: 1px solid #a1603d;
+    background-color: #bf7953;
     color: white;
     transition: all 0.3s ease;
 }
 
 .btn-input:hover{
-    background-color: #a69489;
+    background-color:white;
+    color: #bf7953;
     cursor: pointer
 }

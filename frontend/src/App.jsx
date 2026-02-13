@@ -6,6 +6,7 @@ import Main from './components/Content/main';
 import Perfil from './components/Content/perfil/perfil'
 import Resumen from "./components/Content/perfil/resumen/resumen";
 import MisPedidos from "./components/Content/perfil/pedidos/pedidos";
+import Registro from "./components/Content/registro/registro";
 
 function App() {
   const CurrentPageContent = "Aqui van lo productos por defecto";
@@ -18,6 +19,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Main />}/>
+        <Route path="/registro" element={<Registro />}/>
         <Route path="/perfil" element={<Perfil />}>
           <Route index element={<Resumen />}/>
           <Route path="mis-pedidos" element={<MisPedidos />}/>
