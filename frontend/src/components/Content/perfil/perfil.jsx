@@ -26,6 +26,7 @@ function Perfil() {
                         <li><NavLink to="/perfil/mis-pedidos">Metodos de Pago</NavLink></li>
                         <li><NavLink to="/perfil/mis-pedidos">Lista de Deseos</NavLink></li>
                         <li><NavLink to="/perfil/mis-pedidos">Puntos</NavLink></li>
+                        <li><NavLink to="/perfil/mis-pedidos">Cerrar sesion</NavLink></li>
                     </ul>
                 </div>
             </nav>

@@ -14,7 +14,11 @@ def login_required_api(f):
         return f(*args, **kwargs)
     return decorated_function
 
-@app.route("/api/auth/me", methods=['GET'])
+@app.route('/')
+def pagina_principal_api():
+    return jsonify({"Bienvenido": "Puerto 5000"})
+
+@app.route("/api/auth/login", methods=['GET'])
 def usuario_logueado():
     user_id = session.get('user_id') # Se lee la sesion actual
     if not user_id: # -> Si hay o no hay sesion actual
@@ -33,4 +37,40 @@ def usuario_logueado():
             'email': usuario.email,
         }
     })
+
+@app.route("/api/auth/register", methods=['POST'])
+def registrar_usuario():
+    datos_usuario = request.get_json()
+    
+    nombre_usuario = datos_usuario.get('nombre_usuario')
+    _clave = datos_usuario.get("clave")
+
+    if not _clave:
+        return jsonify({"success": False, "error": "La clave es obligatoria"}), 400
+
+    clave_encriptada = generate_password_hash(_clave)
+    
+    try:
+
+        nuevo_usuario = Usuario(
+            nombre_usuario = datos_usuario.get("nombre_usuario"),
+            email = datos_usuario.get("email"),
+            clave = clave_encriptada
+        )
+
+        db.session.add(nuevo_usuario)
+
+        db.session.commit()
+
+        return jsonify({
+            'success': True,
+            'mensaje': 'Usuario registrado correctamente',
+            'userName': nombre_usuario
+        }), 201
+    except Exception as e:
+        db.session.rollback()
+        return jsonify({
+            "success": False, 
+            "error": "El email o nombre de usuario ya existen",
+        }), 400
     

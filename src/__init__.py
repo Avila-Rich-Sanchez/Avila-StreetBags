@@ -6,7 +6,7 @@ from .config import SECRET_KEY
 def init_cors(app_instance):
     """Configura CORS para React"""
     CORS(app_instance, 
-        origins=["http://localhost:3000"],  # React
+        origins=["http://localhost:5173"],  # React
         supports_credentials=True,
         allow_headers=["Content-Type", "Authorization"])
 

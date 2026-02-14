@@ -253,3 +253,24 @@ h1 a:hover{
 .modal-container p a:hover {
     color: #ba9f91;
 }
+
+.error-mensaje {
+    background-color: #ffebee;
+    color: #c62828;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    border-left: 4px solid #c62828;
+    font-size: 14px;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+}
+
+.btn-input:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.input-form:disabled {
+    background-color: #f5f5f5;
+    cursor: not-allowed;
+}

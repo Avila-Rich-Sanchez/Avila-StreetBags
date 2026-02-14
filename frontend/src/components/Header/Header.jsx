@@ -1,12 +1,15 @@
-import React from 'react';
 import { useNavigate, NavLink } from 'react-router-dom';
+import axios from 'axios';
 import './Header.css'; 
 import { useState } from 'react';
 
+
 function Header() {
-    const [modalAbierto, setModalAbierto] = useState(false);  // ← AÑADE ESTO
-    const userName = "";
+    const [modalAbierto, setModalAbierto] = useState(false);
+    const [loading, setLoading] = useState(false)
+    const [error, setError] = useState(''); 
     const navigate = useNavigate();
+    const [userName, setuserName] = useState('');
 
     const irAlPerfil = () => {
         navigate('/perfil');
@@ -14,11 +17,66 @@ function Header() {
 
     const abrirModal = () => {
         setModalAbierto(true);
+        setError('');
     };
 
     const cerrarModal = () => {
-        setModalAbierto(false);  // ← CIERRA el modal
+        setModalAbierto(false);
+        setError('');
     };
+
+    const handleRegistro = async (e) => {
+        e.preventDefault();
+        setLoading(true);
+        setError('');
+
+        const formData = {
+            'nombre_usuario': e.target['nombre_usuario'].value,
+            'email': e.target.email.value,
+            'clave': e.target.clave.value,
+        }
+
+        console.log("Enviando a Flask:", formData);
+
+        try{
+            const response = await axios.post(
+                'http://localhost:5000/api/auth/register',
+                formData,
+                {
+                    withCredentials: true,
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                }
+            )
+            console.log('Respuesta de Flask:', response.data);
+
+            if(response.data.success){
+                const nombre = response.data.userName;
+                localStorage.setItem('userName', nombre); // Lo guardas en el navegador
+                setuserName(nombre); 
+                alert('Registro exitoso');
+                cerrarModal();
+            }
+            else{
+                setError(response.data.success || 'Error en el registro');
+            }
+        }
+            catch (error){
+                console.error('Error completo:', error);
+                if(error.response){
+                    setError(error.response.data.error || 'Error del servidor');
+                }
+                else if (error.request) {
+                    setError('No se pudo conectar con el servidor. ¿Flask está corriendo?');
+                }
+                else {
+                    setError('Error al enviar los datos');
+                }   
+                } finally {
+                setLoading(false);
+            }         
+        };
 
     return (
     <header>
@@ -85,14 +143,22 @@ function Header() {
                         <button className="modal-close" onClick={cerrarModal}>×</button>
                         
                         <h2>REGISTRATE</h2>
+
+                        {error && (
+                            <div className="error-mensaje">
+                                {error}
+                            </div>
+                        )}
                         
-                        <form onSubmit={(e) => e.preventDefault()}>
+                        <form onSubmit={handleRegistro}>
                             <label htmlFor="nombre-usuario">Nombre de usuario</label><br/>
                             <input 
                                 type="text" 
                                 className="input-form" 
-                                id="nombre-usuario" 
+                                id="nombre_usuario" 
                                 name="nombre_usuario"
+                                required
+                                disabled={loading}
                             /><br/>
                             
                             <label htmlFor="email">E-mail</label><br/>
@@ -101,6 +167,8 @@ function Header() {
                                 className="input-form" 
                                 id="email" 
                                 name="email"
+                                required
+                                disabled={loading}
                             /><br/>
                             
                             <label htmlFor="clave">Contraseña</label><br/>
@@ -109,25 +177,28 @@ function Header() {
                                 className="input-form" 
                                 id="clave" 
                                 name="clave"
+                                required
+                                disabled={loading}
                             /><br/>
                             
                             <label className="label-checkbox">
                                 <input 
                                     type="checkbox" 
                                     className="input-checkbox" 
+                                    required 
+                                    disabled={loading}
                                 /> Acepto términos y condiciones
                             </label>
                             
                             {/* Botón que SOLO cierra el modal (sin conexión) */}
-                            <button type="button" className="btn-input" onClick={cerrarModal}>
-                                REGISTRARME
+                            <button type="submit" className="btn-input" disabled={loading}>
+                                {loading ? 'REGISTRANDO...' : 'REGISTRARME'}
                             </button>
                             
                             <p>
                                 <a href="#" onClick={(e) => {
                                     e.preventDefault();
                                     cerrarModal();
-                                    // navigate('/login');
                                 }}>Ya tengo una cuenta</a>
                             </p>
                         </form>
